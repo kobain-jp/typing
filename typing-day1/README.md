@@ -63,7 +63,9 @@ addEventListenerの第2引数のlistnerにセットされた関数には実行�
 https://developer.mozilla.org/ja/docs/Web/API/Event
 
 ちなみにkeydownとkeypressの違い
+
 http://amaraimusi.sakura.ne.jp/sample/js/jq_keydown/jq_keydown.html
+
 今回大文字にするためのキーを押下した際はイベントを発火する必要がないため、keypressを採用する
 
 
