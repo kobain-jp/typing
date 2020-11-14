@@ -64,7 +64,7 @@ https://developer.mozilla.org/ja/docs/Web/API/Event
 
 ### 課題を表示しよう
 
-完了した箇所、未完了の箇所を色分けしよう
+課題でタイピングが完了した箇所、未完了の箇所を色分けしよう
 
 
 index.html
@@ -94,7 +94,7 @@ app.cssに以下を追加
 
 https://developer.mozilla.org/ja/docs/Web/CSS/Class_selectors
 
-文字を大きくして、中央によせよう
+課題の文字を大きくして、中央によせよう
 
 index.html
 
@@ -125,7 +125,7 @@ F12 > Elements タグで好きな文字の大きさ、位置に調整しよう
 
 ### solveロジックを実装しよう
 
-最初の課題をセットしよう
+最初の課題:helloをセットしよう
 
 index.html
 
@@ -151,11 +151,12 @@ function solve(e) {
     console.log(e.target);
     console.log(e.key);
 
-//keyの値を取得する
+//入力されたkeyの値を取得する
 //untypedの1文字目を取得する
 
-//keyの値とuntypedの1文字目がマッチすれば、
+//keyの値とuntypedの1文字目が
 
+//マッチすれば、
 //typedに正解したkeyを追加する
 //untypedの最初の文字列を削る
 
@@ -168,7 +169,7 @@ function solve(e) {
 なので、まずuntyped,typedのタグをjsから操作できるようにしよう
 
 
-index.htmlにidを付与する
+index.htmlにのspanタグにidを付与する
 
 ```
 
@@ -182,7 +183,7 @@ index.htmlにidを付与する
 
 ```
 
-app.jsで変数にセットする
+app.jsで変数にセットする（使う時に取得するのではなく、初期ロード時にエレメントは変数にセットしてつかう、その方が毎回取得するより速いし、コードが短くなって読みやすいから）
 
 ```
 
@@ -192,7 +193,7 @@ const typedElement = document.getElementById('typed');
 
 ```
 
-ロジックを実装しよう
+以下のメソッドを使ってロジックを実装しよう
 
 tag内の文字烈を取得する　Element.innerHTML
 https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML
@@ -211,7 +212,7 @@ function solve(e) {
     console.log(e.target);
     console.log(e.key);
 
-    //keyの値を取得する
+    //入力されたkeyの値を取得する
     const inputChar = e.key;
     //untypedの1文字目を取得する
     const targetChar = untypedElement.innerHTML.charAt(0);
@@ -251,5 +252,5 @@ function solve(e) {
 - cssのインクルードの仕方 
 - classタグ
 - css property font-size text-align color margin-top
-- keydonw event
+- keydonw eventオブジェクト
 - string charAt substring
