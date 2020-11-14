@@ -42,7 +42,7 @@ app.jsに以下を追加
 
 ```
 
-document.addEventListener("keydown", solve);
+document.addEventListener("keypress", solve);
 
 function solve(e) {
     console.log(e.target);
@@ -61,6 +61,11 @@ e.key -> 打ったキー
 addEventListenerの第2引数のlistnerにセットされた関数には実行時にeventオブジェクトが渡される
 
 https://developer.mozilla.org/ja/docs/Web/API/Event
+
+ちなみにkeydownとkeypressの違い
+http://amaraimusi.sakura.ne.jp/sample/js/jq_keydown/jq_keydown.html
+今回大文字にするためのキーを押下した際はイベントを発火する必要がないため、keypressを採用する
+
 
 ### 課題を表示しよう
 
