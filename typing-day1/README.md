@@ -253,6 +253,33 @@ function solve(e) {
 
 ```
 
+### 引用元を表示しよう
+
+index.html
+
+```
+
+    </div>
++   <footer class="footer">Source of Quote: "Mark Zuckerberg"</footer>
+    <script src="app.js"></script>
+ 
+```
+
+
+app.css
+
+```
+
+.footer {
+    color: grey;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+```
+
+
 お疲れ様でした！！
 
 今日学んだこと
