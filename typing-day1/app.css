@@ -12,3 +12,10 @@
 .untyped{
     color: grey;
 }
+
+.footer {
+    color: grey;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
