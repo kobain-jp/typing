@@ -1,0 +1,19 @@
+.quote{
+    text-align: center;
+    font-size: 40pt;
+    margin-top: 100px;
+}
+
+.typed {
+    color: black;
+}
+.untyped {
+    color: grey;
+}
+
+.footer {
+    color: grey;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
