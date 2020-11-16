@@ -1,5 +1,8 @@
 ### 初期ファイルを作成する。(前回の復習＋１)
 
+typing-day1フォルダを任意の場所に作成し、
+VsCodeでOpenで選択し、以下ファイルを作成しましょう
+
 ```
 -typing-day1
 --index.html
