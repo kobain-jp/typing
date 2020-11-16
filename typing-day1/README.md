@@ -208,6 +208,9 @@ const typedElement = document.getElementById('typed');
 tag内の文字烈を取得する　Element.innerHTML
 https://developer.mozilla.org/ja/docs/Web/API/Element/innerHTML
 
+innerHTML以外のHTMLを書き換え方法
+https://qiita.com/RyBB/items/c87af2413c34f9367d00
+
 特定のインデックスの文字列を取得する。 String.charAt;
 https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 
