@@ -1,14 +1,16 @@
 .quote{
     text-align: center;
-    font-size: 40pt;
+    font-size: 0pt;
     margin-top: 100px;
 }
 
 .typed {
     color: black;
+    font-size: 40pt;
 }
 .untyped {
     color: grey;
+    font-size: 40pt;
 }
 
 .footer {
