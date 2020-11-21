@@ -81,6 +81,10 @@
         window.location.reload();
     }
 
+    function showTemporarilyUnavailable() {
+        typedElement.innerHTML = "temporarily unavailable"
+    }
+
     //model
     function loadQuotes(onSuccededCallBack, onFailedCallback) {
 
@@ -106,10 +110,6 @@
     }
 
     loadQuotes(nextQuote, showTemporarilyUnavailable);
-
-    function showTemporarilyUnavailable() {
-        typedElement.innerHTML = "temporarily unavailable"
-    }
 
 }());
 
