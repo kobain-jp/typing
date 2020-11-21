@@ -3,7 +3,7 @@
 
     const App = {
 
-        init: function () {
+        init: async function () {
             // html elements
             this.untypedElement = document.getElementById('untyped');
             this.typedElement = document.getElementById('typed');
@@ -18,7 +18,8 @@
 
             document.addEventListener("keypress", this.solve.bind(this));
 
-            this.loadQuotes(this.nextQuote.bind(this));
+            this.quotes = await this.loadQuotes();
+            this.nextQuote();
 
         }, solve: function (e) {
 
@@ -74,14 +75,20 @@
 
             window.location.reload();
 
-        }, loadQuotes: function (callback) {
-            this.quotes.push("It means that your future hasn't been written yet.");
-            this.quotes.push("No one's has.");
-            this.quotes.push("Your future is whatever you make it.");
-            this.quotes.push("So make it a good one.");
-            this.quotes.push("Both of ya!");
+        }, loadQuotes: function () {
 
-            callback();
+            return new Promise((resolve, reject) => {
+
+                fetch("./data.json")
+                    .then((res) => {
+                        resolve(res.json())
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    });
+
+            });
+
 
         }, renderQuote: function () {
             const escapedTypedText = this.currentQuote.typed.replace(/\s/g, "&nbsp;");
