@@ -7,7 +7,7 @@
 
 
     // model
-    const quotes = [];
+    let quotes = [];
     // data for elements
     const currentQuote = { untyped: "", typed: "" };
 
@@ -82,14 +82,20 @@
     }
 
     //model
-    function loadQuotes(callback) {
-        quotes.push("It means that your future hasn't been written yet.");
-        quotes.push("No one's has.");
-        quotes.push("Your future is whatever you make it.");
-        quotes.push("So make it a good one.");
-        quotes.push("Both of ya!");
+    function loadQuotes(onSuccededCallBack, onFailedCallback) {
 
-        callback();
+        fetch("./data.json")
+            .then((res) => {
+                return res.json();
+            }).then((data) => {
+                quotes = data;
+                onSuccededCallBack();
+            })
+            .catch((err) => {
+                console.log(err);
+                onFailedCallback();
+            });
+
     }
 
     //view
@@ -99,7 +105,11 @@
 
     }
 
-    loadQuotes(nextQuote);
+    loadQuotes(nextQuote, showTemporarilyUnavailable);
+
+    function showTemporarilyUnavailable() {
+        typedElement.innerHTML = "temporarily unavailable"
+    }
 
 }());
 

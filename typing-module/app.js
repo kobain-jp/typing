@@ -1,25 +1,30 @@
+'use strict';
 (function () {
-
 
     const App = {
 
         init: async function () {
-            // html elements
+            // set html elements to properties of this
             this.untypedElement = document.getElementById('untyped');
             this.typedElement = document.getElementById('typed');
 
-            // model
-            this.quotes = [];
-            // data for elements
-            this.currentQuote = { untyped: "", typed: "" };
-            this.typeCount = 0;
-
-            this.correctTypeCount = 0;
-
+            //bindEvents
             document.addEventListener("keypress", this.solve.bind(this));
 
-            this.quotes = await this.loadQuotes();
-            this.nextQuote();
+            // init data 
+            this.currentQuote = { untyped: "", typed: "" };
+            this.typeCount = 0;
+            this.correctTypeCount = 0;
+            this.quotes = [];
+
+            try {
+                // load data
+                this.quotes = await this.loadQuotes();
+                // set 1st quates and render
+                this.nextQuote();
+            } catch (err) {
+                this.showTemporarilyUnavailable();
+            }
 
         }, solve: function (e) {
 
@@ -75,13 +80,19 @@
 
             window.location.reload();
 
+        }, showTemporarilyUnavailable: function () {
+
+            this.typedElement.innerHTML = "temporarily unavailable"
+
         }, loadQuotes: function () {
 
             return new Promise((resolve, reject) => {
 
                 fetch("./data.json")
                     .then((res) => {
-                        resolve(res.json())
+                        return res.json();
+                    }).then((data) => {
+                        resolve(data);
                     })
                     .catch((err) => {
                         reject(err)
