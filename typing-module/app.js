@@ -1,10 +1,9 @@
-'use strict';
-(function () {
+(async function () {
 
     const App = {
 
         init: async function () {
-            // set html elements to properties of this
+            // set html elements to variable
             this.untypedElement = document.getElementById('untyped');
             this.typedElement = document.getElementById('typed');
 
@@ -17,10 +16,11 @@
             this.correctTypeCount = 0;
             this.quotes = [];
 
+            // load data and render
             try {
-                // load data
+                //load data
                 this.quotes = await this.loadQuotes();
-                // set 1st quates and render
+                //
                 this.nextQuote();
             } catch (err) {
                 this.showTemporarilyUnavailable();
@@ -80,26 +80,14 @@
 
             window.location.reload();
 
-        }, showTemporarilyUnavailable: function () {
+        }, loadQuotes: async function () {
 
-            this.typedElement.innerHTML = "temporarily unavailable"
-
-        }, loadQuotes: function () {
-
-            return new Promise((resolve, reject) => {
-
-                fetch("./data.json")
-                    .then((res) => {
-                        return res.json();
-                    }).then((data) => {
-                        resolve(data);
-                    })
-                    .catch((err) => {
-                        reject(err)
-                    });
-
-            });
-
+            try {
+                const response = await fetch("./data.json");
+                return response.json();
+            } catch (err) {
+                throw new Error(err);
+            }
 
         }, renderQuote: function () {
             const escapedTypedText = this.currentQuote.typed.replace(/\s/g, "&nbsp;");
@@ -108,10 +96,12 @@
             this.typedElement.innerHTML = escapedTypedText;
             this.untypedElement.innerHTML = escapedUnTypedText;
 
+        }, showTemporarilyUnavailable: function () {
+            this.typedElement.innerHTML = "temporarily unavailable"
         }
     }
 
-    App.init();
+    await App.init();
 
 }());
 
