@@ -1,4 +1,12 @@
-### 初期ファイルを作成する。(前回の復習＋１)
+### 開発環境のセットアップ
+
+VSCodeのインストール
+https://code.visualstudio.com/download
+
+VSCodeプラグイン Live Serverのインストール
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+### 初期ファイルを作成する。
 
 typing-easyフォルダを任意の場所に作成し、
 VsCodeでOpenで選択し、以下ファイルを作成しましょう
