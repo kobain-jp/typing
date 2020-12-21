@@ -1,10 +1,6 @@
-
-
-
 // html elements
 const untypedElement = document.getElementById('untyped');
 const typedElement = document.getElementById('typed');
-
 
 // model
 let quotes = [];
@@ -104,10 +100,11 @@ function loadQuotes(onSuccededCallBack, onFailedCallback) {
 
 //view
 function renderQuote() {
-    typedElement.innerHTML = currentQuote.typed;
-    untypedElement.innerHTML = currentQuote.untyped;
+    typedElement.innerText = currentQuote.typed;
+    untypedElement.innerText = currentQuote.untyped;
 
 }
+
 
 loadQuotes(nextQuote, showTemporarilyUnavailable);
 

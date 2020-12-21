@@ -11,6 +11,7 @@
 .untyped {
     color: grey;
     font-size: 40pt;
+    white-space: pre;
 }
 
 .footer {

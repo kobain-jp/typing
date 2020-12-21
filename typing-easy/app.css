@@ -1,16 +1,18 @@
-
 .quote{
-    font-size: 80px;
     text-align: center;
+    font-size: 0pt;
     margin-top: 100px;
 }
 
 .typed{
+    font-size: 80px;
     color:black;
 }
 
 .untyped{
+    font-size: 80px;
     color: grey;
+    white-space: pre;
 }
 
 .footer {
