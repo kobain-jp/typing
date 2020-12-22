@@ -102,12 +102,10 @@ app.cssに以下を追加
 ```
 .typed{
     color:black;
-    font-size: 80px;
 }
 
 .untyped{
     color: grey;
-    font-size: 80px;
 }
 
 ```
@@ -136,6 +134,17 @@ app.css
     font-size: 0px;
     text-align: center;
     margin-top: 100px;
+}
+
+.typed{
+    font-size: 80px;
+    color:black;
+}
+
+.untyped{
+    font-size: 80px;
+    color: grey;
+    white-space: pre;
 }
 
 ```
