@@ -131,9 +131,20 @@ app.css
 ```
 
 .quote{
-    font-size: 80px;
+    font-size: 0px;
     text-align: center;
     margin-top: 100px;
+}
+
+.typed{
+    font-size: 80px;
+    color:black;
+}
+
+.untyped{
+    font-size: 80px;
+    color: grey;
+    white-space: pre;
 }
 
 ```

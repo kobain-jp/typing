@@ -64,7 +64,7 @@ app.js
 
 ```
 // model
-let quotes = [];
+let quotes = []; // データ保持用の配列
 
 
 //model
@@ -84,6 +84,8 @@ function loadQuotes(onSuccededCallBack, onFailedCallback) {
 
 }
 ```
+
+*asyncなどを使うパターンの方が一般的だが、本日は割愛
 
 配列から問題を読み込もう
 
