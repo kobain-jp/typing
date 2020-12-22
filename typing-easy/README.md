@@ -102,10 +102,12 @@ app.cssに以下を追加
 ```
 .typed{
     color:black;
+    font-size: 80px;
 }
 
 .untyped{
     color: grey;
+    font-size: 80px;
 }
 
 ```
@@ -131,7 +133,7 @@ app.css
 ```
 
 .quote{
-    font-size: 80px;
+    font-size: 0px;
     text-align: center;
     margin-top: 100px;
 }
